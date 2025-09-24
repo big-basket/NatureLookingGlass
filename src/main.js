@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { ARButton } from 'three/examples/jsm/webxr/ARButton.js';
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -30,7 +31,8 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// WebXR Button
-document.body.appendChild(THREE.XRButton.createButton(renderer, { requiredFeatures: ['hit-test'] }));
+// ✅ Add AR button
+document.body.appendChild(ARButton.createButton(renderer, { requiredFeatures: ['hit-test'] }));
 
+// Start animation loop
 renderer.setAnimationLoop(animate);
